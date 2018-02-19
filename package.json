@@ -1,0 +1,31 @@
+{
+    name: "beer_lib",
+    version: "1.0.0",
+    description: "Beer CRUD library",
+    main: "index.js",
+    scripts: {
+        test: "echo "Error: no test specified" && exit 1"
+    },
+    author: "Bucky",
+    license: "ISC",
+    dependencies: {
+        firebase: "^4.10.0"
+    },
+    keywords: [
+    "Beer"
+    ],
+    appkit: {
+        components: [
+            {
+                name: "BlueButton",
+                script: "components/BlueButton.js"
+            }
+        ],
+        libs: [
+            {
+                name: "beercrud",
+                script: "src/BeerData.js"
+            }
+        ]
+    }
+}
