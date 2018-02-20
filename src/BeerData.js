@@ -1,4 +1,4 @@
-let Firebase: require('firebase');
+let Firebase = require('firebase');
 //comment
 
 let beerObject = {
