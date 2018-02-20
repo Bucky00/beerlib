@@ -107,7 +107,7 @@ class BeerData {
 
         let db = Firebase.database();
         let ref = db.ref(this._dataSrc);
-        await ref.orderByChild('beerID').equalTo(beerID).on("child_added", beerRecord => {
+        ref.orderByChild('beerID').equalTo(beerID).on("child_added", beerRecord => {
             console.log(beerRecord.val());
             callback(beerRecord.val());
         });
