@@ -157,15 +157,15 @@ class LLKBeer {
     }
 
     get ReOrderBeers() {
-        return BeerOrders;
+        return ReOrderBeers;
     }
     
     get LiveBeers() {
-        return BeerOrders;
+        return LiveBeers;
     }
     
     get KickedBeer() {
-        return BeerOrders;
+        return KickedBeer;
     }    
 }
 
