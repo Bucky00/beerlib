@@ -155,6 +155,18 @@ class LLKBeer {
     get BeerOrders() {
         return BeerOrders;
     }
+
+    get ReOrderBeers() {
+        return BeerOrders;
+    }
+    
+    get LiveBeers() {
+        return BeerOrders;
+    }
+    
+    get KickedBeer() {
+        return BeerOrders;
+    }    
 }
 
 //const beer = new BeerOrders();
