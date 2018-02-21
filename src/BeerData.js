@@ -144,7 +144,7 @@ class LLKBeer {
     }
     //Create Objects, create methods like move data, resort, etc.
     //const BeerOrders = new BeerOrders();
-    //const newBeer = new BeerOrders();
+    //const newBeer = new BeerOrders(); test
 
     async initFirebase(config) {
         if (!Firebase.apps || Firebase.apps.length == 0) {
