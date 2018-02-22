@@ -97,7 +97,7 @@ class BeerData {
             snapshot.forEach(c => {
                 beers.push(c.val());
             });
-            console.log(beers);
+            //console.log(beers);
 
             callback(beers);
         });
@@ -108,7 +108,7 @@ class BeerData {
         let db = Firebase.database();
         let ref = db.ref(this._dataSrc);
         ref.orderByChild('beerID').equalTo(beerID).on("child_added", beerRecord => {
-            console.log(beerRecord.val());
+            //console.log(beerRecord.val());
             callback(beerRecord.val());
         });
     }
