@@ -97,7 +97,7 @@ class BeerData {
             snapshot.forEach(c => {
                 beers.push(c.val());
             });
-            //console.log(beers);
+            //console.log(beers); Removed
 
             callback(beers);
         });
