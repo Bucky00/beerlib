@@ -33,9 +33,109 @@ class BeerData {
             style: 'Bock',
             tap: 4,
             beerorder: 2
-        },
-            this._todayDate = new Date().toDateString();
+        }
+
+            this.appDistri = {
+                empty: "PICK DISTRIBUTOR",
+                "Beer Mart": "Beer Mart",
+                "CKW": "CKW",
+                "Collusion": "Collusion",
+                "Gunpowder Falls": "Gunpowder Falls",
+                "Kirchner": "Kirchner",
+                "Origlio": "Origlio",
+                "Shangy": "Shangy",
+                "Stockertown": "Stockertown",
+                "St Boniface": "St Boniface",
+                "31-Wharton": "31-Wharton",
+                "Wacker": "Wacker",
+                "Wilsbach": "Wilsbach",
+                "Westy": "Westy"
+            }
+
+            this.appTaps = {
+                empty: "",
+                "0": "SELECT A TAP FOR THE BEER",
+                "1": "Tap 1 Am Lager",
+                "2": "Tap 2 Am Ale",
+                "3": "Tap 3 Lite Beer",
+                "4": "Tap 4 IPA",
+                "5": "Tap 5 IPA",
+                "6": "Tap 6 Cider",
+                "7": "Tap 7 Seasonal",
+                "8": "Tap 8 Seasonal",
+                "9": "Tap 9 Sour",
+                "10": "Tap 10 Belgian",
+                "11": "Tap 11 German Lager",
+                "12": "Tap 12 Nitro",
+                "13": "Tap 13 German Seasonal",
+                "14": "Tap 14 German Seasonal",
+                "15": "Tap 15 German Lager",
+                "16": "Tap 16 German Pils",
+                "17": "Tap 17 German Seasonal",
+                "18": "Tap 18 German Seasonal",
+                "19": "Tap 19 German Lager",
+                "20": "Tap 20 German Weiss",
+                "21": "Bottle Offerings",
+                "22": "Beer Cellar Aging - Offered Later",
+                "23": "Pavilion"
+            }
+
+            this.appServingSizes = {
+                empty: "PICK SERVING SIZE",
+                "16oz": "16 oz",
+                "12oz": "12 oz",
+                "16.9oz": "16.9 oz"
+            }
+    
+            this.appKegSizes = {
+                empty: "PICK KEG SIZE",
+                "1/2bbl": "1/2bbl",
+                "1/6bbl": "1/6bbl",
+                "1/4bbl": "1/4bbl",
+                "20L": "20L",
+                "30L": "30L",
+                "50L": "50L",
+                "Case" : "Case"
+            }
+    
+            this.appTapStyleLst = {
+                empty: "PICK Tap Style",
+                "Am Lager Tap": "Am Lager Tap",
+                "Am Ale Tap": "Am Ale Tap",
+                "Lite Beer Tap": "Lite Beer Tap",
+                "IPA Tap": "IPA Tap",
+                "Cider Tap": "Cider Tap",
+                "Seasonal Tap": "Seasonal Tap",
+                "Sour Tap": "Sour Tap",
+                "Belgian Tap": "Belgian Tap",
+                "Nitro Tap": "Nitro Tap",
+                "German Lager Tap": "German Lager Tap",
+                "German Pils Tap": "German Pils Tap",
+                "German Weiss Tap": "German Weiss Tap",
+                "German Tap": "German Tap",
+                "German Seasonal Tap": "German Seasonal Tap",
+                "Bottle Offerings": "Bottle Offerings",
+                "Beer Cellar Aging": "Beer Cellar Aging",            
+            }        
+
+            this._todayDate = new Date().toDateString();            
     }
+
+    get distri() {
+        return this.appDistri;
+    }
+    get taps() {
+        return this.appTaps;
+    }
+    get servingSizes() {
+        return this.appServingSizes;
+    }
+    get kegSizes() {
+        return this.appKegSizes;
+    }    
+    get tapStyleLst() {
+        return this.appTapStyleLst;
+    }       
 
     get beerRec() {
         return this._beerRec;
