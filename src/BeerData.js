@@ -233,7 +233,7 @@ class ReOrderBeers extends BeerData {
 
 class BeerOrders extends BeerData {
     constructor() {
-        super('beerOrders');
+        super('weeklyOrders'); //super('beerOrders'); Change to better name later
     }
 }
 
