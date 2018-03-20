@@ -117,6 +117,13 @@ class BeerData {
             "Beer Cellar Aging": "Beer Cellar Aging",
         }
 
+        this.appBeerStyles = {
+            empty: "PICK Beer Style",
+            "German": "German",
+            "Craft": "Craft",
+            "Bottle": "Bottle"
+        }        
+
         this._todayDate = new Date().toDateString();
     }
 
@@ -135,6 +142,9 @@ class BeerData {
     get tapStyleLst() {
         return this.appTapStyleLst;
     }
+    get beerStyleLst() {
+        return this.appTapStyleLst;
+    }    
 
     get beerRec() {
         return this._beerRec;
@@ -237,6 +247,12 @@ class BeerOrders extends BeerData {
     }
 }
 
+class ClubEvents extends BeerData {
+    constructor() {
+        super('events');
+    }
+}
+
 //specific 
 class LLKBeer {
     constructor(dataSrc, beerObject) {
@@ -266,6 +282,10 @@ class LLKBeer {
     get KickedBeer() {
         return KickedBeer;
     }
+    
+    get ClubEvents() {
+        return ClubEvents;
+    }    
 }
 
 //const beer = new BeerOrders();
