@@ -212,10 +212,16 @@ class BeerData {
         });
     }
 
+    detachGetBeers(listener){
+        let db = Firebase.database();
+        let ref = db.ref(this._dataSrc).orderByChild(orderByFld);
+        ref.off("value", listener)
+    }    
+
     detachGetLimitedBeers(listener){
         let db = Firebase.database();
         let ref = db.ref(this._dataSrc);
-        ref.off(listener)
+        ref.off("value", listener)
     }
 
     getLimitedBeers(limitToNum, callback) {
