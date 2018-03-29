@@ -212,12 +212,18 @@ class BeerData {
         });
     }
 
+    detachGetLimitedBeers(listener){
+        let db = Firebase.database();
+        let ref = db.ref(this._dataSrc).limitToLast(limitToNum);
+        ref.off(listener)
+    }
+
     getLimitedBeers(limitToNum, callback) {
 
         //initialize Firebase DB
         let db = Firebase.database();
         let ref = db.ref(this._dataSrc).limitToLast(limitToNum);
-        ref.on("value", snapshot => {
+        return ref.on("value", snapshot => {
             // to maintain sort, get posts via forEach
             const beers = [];
             snapshot.forEach(c => {
@@ -233,10 +239,16 @@ class BeerData {
 
         let db = Firebase.database();
         let ref = db.ref(this._dataSrc);
-        ref.orderByChild('beerID').equalTo(beerID).on("child_added", beerRecord => {
+        ref.orderByChild('beerID').equalTo(beerID).once("child_added").then(beerRecord => {
             //console.log(beerRecord.val());
             callback(beerRecord.val());
         });
+
+//        ref.orderByChild('beerID').equalTo(beerID).on("child_added", beerRecord => {
+//            //console.log(beerRecord.val());
+//            callback(beerRecord.val());
+//        });
+
     }
 }
 
