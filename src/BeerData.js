@@ -214,7 +214,7 @@ class BeerData {
 
     detachGetLimitedBeers(listener){
         let db = Firebase.database();
-        let ref = db.ref(this._dataSrc).limitToLast(limitToNum);
+        let ref = db.ref(this._dataSrc);
         ref.off(listener)
     }
 
