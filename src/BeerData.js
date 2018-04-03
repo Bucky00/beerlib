@@ -194,11 +194,9 @@ class BeerData {
         let db = Firebase.database();
         let ref = db.ref(this._dataSrc).orderByChild('beerID').equalTo(beerID);
 
-            await ref.remove()
-        
-        //await ref.once("child_removed", function (snapshot) {
-        //    snapshot.ref.remove()
-        //});
+        await ref.once("child_removed", function (snapshot) {
+            snapshot.ref.remove()
+        });
 
     }
 
