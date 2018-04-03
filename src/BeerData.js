@@ -194,11 +194,15 @@ class BeerData {
         let db = Firebase.database();
         let ref = db.ref(this._dataSrc).orderByChild('beerID').equalTo(beerID);
         console.log("BeerLib before ref.once Remove")
-        return ref.once("child_added").then(function (snapshot) {
+        try {
+            return ref.once("child_added").then(function (snapshot) {
             console.log("BeerLib before Remove")
             return snapshot.ref.remove()
             console.log("BeerLib after Remove")
         });
+        } catch(e) {
+            console.log(e.message)
+        }
     }
 
     getBeers(orderByFld, callback) {
