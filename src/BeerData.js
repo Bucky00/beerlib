@@ -160,6 +160,7 @@ class BeerData {
         beerRec.beerID = new Date().getTime();
         beerRec.dateRec = new Date().getTime();
         beerRec.beerRecOrder = Number.MAX_SAFE_INTEGER - Date.now();
+        beerRec.beerorder = Number(beerRec.beerorder);
 
 
         let db = Firebase.database();
@@ -173,6 +174,7 @@ class BeerData {
     async editBeer(beerRec, beerID) {
 
         beerRec.dateStr = this._todayDate;
+        beerRec.beerorder = Number(beerRec.beerorder);
 
 
         let db = Firebase.database();
