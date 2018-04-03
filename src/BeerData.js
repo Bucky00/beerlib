@@ -176,24 +176,31 @@ class BeerData {
         beerRec.dateStr = this._todayDate;
         beerRec.beerorder = Number(beerRec.beerorder);
 
-
         let db = Firebase.database();
         let ref = db.ref(this._dataSrc).orderByChild("beerID").equalTo(beerID);
 
-        await ref.once("child_added", function (snapshot) {
-            snapshot.ref.update(beerRec)
+        return ref.once("child_added").then(function (snapshot) {
+            return snapshot.ref.update(beerRec)
         });
+
+        //await ref.once("child_added", function (snapshot) {
+        //    snapshot.ref.update(beerRec)
+        //});
 
     }
 
     async removeBeer(beerID) {
 
-
         let db = Firebase.database();
         let ref = db.ref(this._dataSrc).orderByChild('beerID').equalTo(beerID);
-        await ref.once("child_added", function (snapshot) {
-            snapshot.ref.remove()
+
+        return ref.once("child_removed").then(function (snapshot) {
+            return snapshot.ref.remove()
         });
+
+        //await ref.once("child_removed", function (snapshot) {
+        //    snapshot.ref.remove()
+        //});
 
     }
 
