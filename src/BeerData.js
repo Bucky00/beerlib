@@ -243,6 +243,23 @@ class BeerData {
         });
     }
 
+    getBeersByTap(tap, callback) {
+
+        //initialize Firebase DB
+        let db = Firebase.database();
+        let ref = db.ref(this._dataSrc).orderByChild("tap").equalTo(tap);
+        ref.once("value", snapshot => {
+            // to maintain sort, get posts via forEach
+            const beers = [];
+            snapshot.forEach(c => {
+                beers.push(c.val());
+            });
+            //console.log(beers); Removed
+
+            callback(beers);
+        });
+    }
+
     getABeerRec(beerID, callback) {
 
         let db = Firebase.database();
