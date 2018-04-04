@@ -259,7 +259,7 @@ class BeerData {
             snapshot.forEach(c => {
                 beers.push(c.val());
             });
-            //console.log(beers); Removed
+            console.log(beers)
 
             callback(beers);
         });
