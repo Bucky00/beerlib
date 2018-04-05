@@ -122,7 +122,7 @@ class BeerData {
             "German": "German",
             "Craft": "Craft",
             "Bottle": "Bottle"
-        }        
+        }
 
         this._todayDate = new Date().toDateString();
     }
@@ -144,7 +144,7 @@ class BeerData {
     }
     get beerStyleLst() {
         return this.appTapStyleLst;
-    }    
+    }
 
     get beerRec() {
         return this._beerRec;
@@ -195,9 +195,9 @@ class BeerData {
         let ref = db.ref(this._dataSrc).orderByChild('beerID').equalTo(beerID);
         try {
             return ref.once("child_added").then(function (snapshot) {
-            return snapshot.ref.remove()
-        });
-        } catch(e) {
+                return snapshot.ref.remove()
+            });
+        } catch (e) {
             console.log(e.message)
         }
     }
@@ -219,13 +219,13 @@ class BeerData {
         });
     }
 
-    detachGetBeers(listener){
+    detachGetBeers(listener) {
         let db = Firebase.database();
         let ref = db.ref(this._dataSrc).orderByChild(orderByFld);
         ref.off("value", listener)
-    }    
+    }
 
-    detachGetLimitedBeers(listener){
+    detachGetLimitedBeers(listener) {
         let db = Firebase.database();
         let ref = db.ref(this._dataSrc);
         ref.off("value", listener)
@@ -265,6 +265,27 @@ class BeerData {
         });
     }
 
+    getABeerDistrOrder(beerWeek, callback) {
+
+        //initialize Firebase DB
+        let db = Firebase.database();
+        let ref = db.ref(this._dataSrc).orderByChild("weekKegOrdered").equalTo(beerWeek);
+        try {
+            return ref.once("value", snapshot => {
+                // to maintain sort, get posts via forEach
+                const beers = [];
+                snapshot.forEach(c => {
+                    beers.push(c.val());
+                });
+                console.log(beers)
+
+                callback(beers);
+            });
+        } catch (e) {
+            console.log(e.message)
+        }
+    }
+
     getABeerRec(beerID, callback) {
 
         let db = Firebase.database();
@@ -274,10 +295,10 @@ class BeerData {
             callback(beerRecord.val());
         });
 
-//        ref.orderByChild('beerID').equalTo(beerID).on("child_added", beerRecord => {
-//            //console.log(beerRecord.val());
-//            callback(beerRecord.val());
-//        });
+        //        ref.orderByChild('beerID').equalTo(beerID).on("child_added", beerRecord => {
+        //            //console.log(beerRecord.val());
+        //            callback(beerRecord.val());
+        //        });
 
     }
 }
@@ -341,10 +362,10 @@ class LLKBeer {
     get KickedBeer() {
         return KickedBeer;
     }
-    
+
     get ClubEvents() {
         return ClubEvents;
-    }    
+    }
 }
 
 //const beer = new BeerOrders();
