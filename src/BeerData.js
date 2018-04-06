@@ -150,9 +150,13 @@ class BeerData {
         return this._beerRec;
     };
 
+    get beerCategory() {
+        return this.appBeerStyles;
+    };
+
     get dataSrc() {
         return this._dataSrc;
-    };
+    };    
 
     async addBeer(beerRec) {
 
