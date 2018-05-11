@@ -4,7 +4,7 @@ let Firebase = require('firebase');
 let beerObject = {
     beerID: 1516476457520,
     weekKegOrdered: '1/19/18',
-    beername: 'Kathy Ale',
+    beername: 'Ale',
     distributor: 'Shangy',
     kegQuantity: '',
     kegSize: '50L',
