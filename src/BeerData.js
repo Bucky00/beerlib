@@ -225,7 +225,7 @@ class BeerData {
 
     detachGetBeers(listener) {
         let db = Firebase.database();
-        let ref = db.ref(this._dataSrc).orderByChild(orderByFld);
+        let ref = db.ref(this._dataSrc)//.orderByChild(orderByFld);
         ref.off("value", listener)
     }
 
