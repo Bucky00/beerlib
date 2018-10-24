@@ -397,6 +397,5 @@ class LLKBeer {
 
 //process.exit(0);
 
-//export default new LLKBeer();
-export default LLKBeer;
+export default new LLKBeer();
 // module.exports = LLKBeer;
