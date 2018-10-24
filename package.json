@@ -15,12 +15,6 @@
     "Beer"
     ],
     "appkit": {
-        "components": [
-            {
-                "name": "BlueButton",
-                "script": "components/BlueButton.js"
-            }
-        ],
         "libs": [
             {
                 "name": "beercrud",
