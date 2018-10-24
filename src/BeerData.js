@@ -374,7 +374,6 @@ class LLKBeer {
 }
 
 //const beer = new BeerOrders();
-
 //Add
 //beer.addBeer(beerObject);
 
