@@ -1,5 +1,5 @@
-let Firebase = require('firebase');
-// import Firebase from 'firebase';
+// let Firebase = require('firebase');
+import Firebase from 'firebase';
 //comment
 
 let beerObject = {
@@ -398,5 +398,5 @@ class LLKBeer {
 //process.exit(0);
 
 //export default new LLKBeer();
-//export default LLKBeer;
-module.exports = LLKBeer;
+export default LLKBeer;
+// module.exports = LLKBeer;
