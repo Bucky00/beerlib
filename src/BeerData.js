@@ -39,6 +39,7 @@ class BeerData {
             "Beer Mart": "Beer Mart",
             "CKW": "CKW",
             "Collusion": "Collusion",
+            "Ever Grain": "Ever Grain",
             "Gunpowder Falls": "Gunpowder Falls",
             "Kirchner": "Kirchner",
             "Origlio": "Origlio",
