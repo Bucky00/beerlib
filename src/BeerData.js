@@ -45,6 +45,7 @@ class BeerData {
             "Kirchner": "Kirchner",
             "Origlio": "Origlio",
             "Shangy": "Shangy",
+            "South County Brewing": "South County Brewing",
             "Stockertown": "Stockertown",
             "St Boniface": "St Boniface",
             "31-Wharton": "31-Wharton",
