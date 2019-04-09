@@ -48,6 +48,7 @@ class BeerData {
             "South County Brewing": "South County Brewing",
             "Stockertown": "Stockertown",
             "St Boniface": "St Boniface",
+            "Tattered Flag": "Tattered Flag",
             "31-Wharton": "31-Wharton",
             "Wacker": "Wacker",
             "Wilsbach": "Wilsbach",
