@@ -44,6 +44,7 @@ class BeerData {
             "Gunpowder Falls": "Gunpowder Falls",
             "Kirchner": "Kirchner",
             "Origlio": "Origlio",
+            "Old Forge Brewing": "Old Forge",
             "Shangy": "Shangy",
             "South County Brewing": "South County Brewing",
             "Stockertown": "Stockertown",
