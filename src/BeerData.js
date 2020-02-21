@@ -38,6 +38,7 @@ class BeerData {
         this.appDistri = {
             empty: "PICK DISTRIBUTOR",
             "Beer Mart": "Beer Mart",
+            "Big Hill Ciderworks": "Big Hill Ciderworks",
             "CKW": "CKW",
             "Collusion": "Collusion",
             "Ever Grain": "Ever Grain",
